@@ -1,5 +1,5 @@
-import { call, all, put, takeLatest } from "redux-saga/effects";
 import UserActionTypes from "./user.types";
+import { call, all, put, takeLatest } from "redux-saga/effects";
 
 import {
   signInSuccess,
@@ -7,12 +7,18 @@ import {
   signOutFailure,
   signOutSuccess,
 } from "./user.actions";
-import { auth, provider } from "../../firebase/firebase.utils";
+import {
+  auth,
+  provider,
+  createUserProfileDocument,
+} from "../../firebase/firebase.utils";
 
 export function* signInWithGoogle() {
   try {
     const { user } = yield auth.signInWithPopup(provider);
-    yield put(signInSuccess(user));
+    const userRef = yield call(createUserProfileDocument, user);
+    const snapshot = yield userRef.get();
+    yield put(signInSuccess({ userId: snapshot.id, ...snapshot }));
   } catch (err) {
     console.log(err);
     yield put(signInFailure(err));

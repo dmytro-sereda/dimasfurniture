@@ -27,6 +27,7 @@ export const signInWithGoogle = () => auth().signInWithPopup(provider);
 
 export default firebase;
 
+// Add collections to firebase
 export const addCollectionAndItems = async (objectsToAdd) => {
   const collectionRef = firestore.collection("collections");
 
@@ -38,4 +39,41 @@ export const addCollectionAndItems = async (objectsToAdd) => {
   });
 
   return await batch.commit();
+};
+
+// Add Profile document
+export const createUserProfileDocument = async (user) => {
+  if (!user) return;
+
+  const userRef = await firestore.doc(`users/${user.uid}`);
+  const snapshot = await userRef.get();
+
+  if (!snapshot.exists) {
+    const { displayName, email } = user;
+    const dateOfCreation = new Date();
+    try {
+      await userRef.set({ displayName, email, dateOfCreation });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  return userRef;
+};
+
+export const convertCollectionsSnapshotToMap = async (querySnapshot) => {
+  const collections = querySnapshot.docs.map((doc) => {
+    const { title, items } = doc.data();
+    return {
+      title,
+      items,
+      id: doc.id,
+      url: encodeURI(title.toLowerCase()),
+    };
+  });
+
+  return collections.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
 };

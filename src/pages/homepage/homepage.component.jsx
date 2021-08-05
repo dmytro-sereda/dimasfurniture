@@ -46,8 +46,9 @@ const HomePage = ({ collections }) => {
           </ImageContainer>
         </FirstSectionContainer>
       </FirstSection>
-      {/* <CollectionPreview collection={{ title: "Hats", items: [{}] }} /> */}
+      <CollectionPreview collection={collections["newest arrivals"]} />
       <Subscribe />
+      <CollectionPreview collection={collections["most popular"]} />
     </div>
   );
 };

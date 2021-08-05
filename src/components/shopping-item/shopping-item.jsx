@@ -9,22 +9,23 @@ import {
   ShoppingItemButton,
 } from "./shopping-item.styles";
 
-const ShoppingItem = () => {
+const ShoppingItem = ({ item }) => {
+  const { imageUrl, material, price, name, producer, size } = item;
   return (
-    <ItemContainer>
-      <ItemTitle>White wolf</ItemTitle>
+    <ItemContainer imageUrl={imageUrl}>
+      <ItemTitle>{name}</ItemTitle>
       <CharsList>
         <CharsItem>
-          Size: <CharsItemData>25cm x 100cm</CharsItemData>
+          Size: <CharsItemData>{size}</CharsItemData>
         </CharsItem>
         <CharsItem>
-          Material: <CharsItemData>Wood & Fur</CharsItemData>
+          Material: <CharsItemData>{material}</CharsItemData>
         </CharsItem>
         <CharsItem>
-          Producer: <CharsItemData>Ikea</CharsItemData>
+          Producer: <CharsItemData>{producer}</CharsItemData>
         </CharsItem>
         <CharsItem>
-          Price: <CharsItemData>25$</CharsItemData>
+          Price: <CharsItemData>{price}$</CharsItemData>
         </CharsItem>
       </CharsList>
       <ShoppingItemButton mainColor={true} size="small">

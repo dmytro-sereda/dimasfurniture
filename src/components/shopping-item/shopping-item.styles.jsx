@@ -7,7 +7,7 @@ export const ItemContainer = styled.div`
   border-radius: 4.9rem;
   width: 40rem;
   height: 53.7rem;
-  background-image: url("https://user-images.githubusercontent.com/74267900/127658707-4794dbb2-2bfc-4f95-874d-79c71b5fddc2.jpg");
+  background-image: url(${(props) => props.imageUrl});
   background-size: cover;
   align-items: center;
   display: flex;

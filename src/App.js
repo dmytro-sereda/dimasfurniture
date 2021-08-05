@@ -1,5 +1,5 @@
 import "./App.css";
-
+import { connect } from "react-redux";
 import React from "react";
 
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -10,7 +10,13 @@ import ShopPage from "./pages/shop/shop.component";
 import Cart from "./components/cart/cart.component";
 import Footer from "./components/footer/footer.component";
 
+import { fetchCollectionsStart } from "./redux/shop/shop.actions";
+
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchCollectionsStart();
+  }
+
   render() {
     return (
       <div>
@@ -26,4 +32,8 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+});
+
+export default connect(null, mapDispatchToProps)(App);

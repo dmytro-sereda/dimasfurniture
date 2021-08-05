@@ -15,6 +15,7 @@ export const SubscribeContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 4rem;
 `;
 
 export const SubscribeHeading = styled.h2`

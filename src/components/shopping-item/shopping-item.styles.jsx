@@ -50,6 +50,7 @@ export const ShoppingItemButton = styled(CustomButton)`
 
 export const ItemTitle = styled.h3`
   ${Heading3}
+  z-index: 100;
 `;
 
 export const CharsList = styled.ul`

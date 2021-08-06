@@ -32,6 +32,6 @@ export const SubscribeForm = styled.form`
   align-items: center;
 `;
 
-export const SubscribeFormInput = styled(FormInput)`
-  margin-right: 3rem;
+export const SubscribeButton = styled(CustomButton)`
+  margin-left: 3rem;
 `;

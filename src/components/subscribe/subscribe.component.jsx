@@ -5,10 +5,10 @@ import {
   SubscribeHeading,
   SubscribeParagraph,
   SubscribeForm,
-  SubscribeFormInput,
+  SubscribeButton,
 } from "./subscribe.styles";
 
-import CustomButton from "../custom-button/custom-button";
+import FormInput from "../form-input/form-input.component";
 
 const Subscribe = () => {
   return (
@@ -18,10 +18,14 @@ const Subscribe = () => {
         Subscribe to our monthly newsletter
       </SubscribeParagraph>
       <SubscribeForm>
-        <SubscribeFormInput type="email" placeholder="Enter your email" />
-        <CustomButton mainColor={true} size="small">
+        <FormInput type="email" placeholder="Enter your email" />
+        <SubscribeButton
+          onClick={() => console.log("Subscribed!")}
+          mainColor={true}
+          size="small"
+        >
           Subscribe
-        </CustomButton>
+        </SubscribeButton>
       </SubscribeForm>
     </SubscribeContainer>
   );

@@ -6,6 +6,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
+import AboutPage from "./pages/about/about.component";
 import ShopPage from "./pages/shop/shop.component";
 import Cart from "./components/cart/cart.component";
 import Footer from "./components/footer/footer.component";
@@ -37,6 +38,7 @@ class App extends React.Component {
             )}
           />
           <Route path="/shop" component={ShopPage} />
+          <Route path="/about" component={AboutPage} />
         </Switch>
         <Footer />
       </div>

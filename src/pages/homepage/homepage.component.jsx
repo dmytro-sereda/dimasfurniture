@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { withRouter } from "react-router";
 
 import {
   FirstSection,
@@ -17,13 +18,10 @@ import image2 from "../../assets/image2.jpg";
 
 import CustomButton from "../../components/custom-button/custom-button";
 import CollectionPreview from "../../components/collection-preview/collection-preview";
-import {
-  selectCollections,
-  selectIsLoading,
-} from "../../redux/shop/shop.selectors";
+import { selectCollections } from "../../redux/shop/shop.selectors";
 import Subscribe from "../../components/subscribe/subscribe.component";
 
-const HomePage = ({ collections }) => {
+const HomePage = ({ collections, history, match }) => {
   return (
     <div>
       <FirstSection imageUrl="../../../assets/ellipse.png">
@@ -35,7 +33,8 @@ const HomePage = ({ collections }) => {
               any way you want.
             </SectionParagraph>
             <CustomButton
-              onClick={() => console.log("GO SHOPPING")}
+              to="/shop"
+              onClick={() => history.push(`${match.path}shop`)}
               mainColor={true}
               size="large"
             >
@@ -60,4 +59,4 @@ const mapStateToProps = createStructuredSelector({
   collections: selectCollections,
 });
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(withRouter(HomePage));

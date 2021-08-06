@@ -11,7 +11,9 @@ import ShoppingItem from "../shopping-item/shopping-item";
 const CollectionPreview = ({ collection }) => {
   return (
     <CollectionPreviewContainer>
-      <CollectionPreviewHeading>{collection.title}</CollectionPreviewHeading>
+      <CollectionPreviewHeading to={`shop/${collection.url}`}>
+        {collection.title}
+      </CollectionPreviewHeading>
       <ItemsContainer>
         {collection.items
           .filter((_, index) => index < 4)

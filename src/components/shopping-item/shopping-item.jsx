@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import {
   ItemContainer,
@@ -9,7 +10,9 @@ import {
   ShoppingItemButton,
 } from "./shopping-item.styles";
 
-const ShoppingItem = ({ item }) => {
+import { addItemToCart } from "../../redux/cart/cart.actions";
+
+const ShoppingItem = ({ item, addItemToCart }) => {
   const { imageUrl, material, price, name, producer, size } = item;
   return (
     <ItemContainer imageUrl={imageUrl}>
@@ -28,11 +31,19 @@ const ShoppingItem = ({ item }) => {
           Price: <CharsItemData>{price}$</CharsItemData>
         </CharsItem>
       </CharsList>
-      <ShoppingItemButton mainColor={true} size="small">
+      <ShoppingItemButton
+        mainColor={true}
+        size="small"
+        onClick={() => addItemToCart(item)}
+      >
         Add to cart
       </ShoppingItemButton>
     </ItemContainer>
   );
 };
 
-export default ShoppingItem;
+const mapDispatchToProps = (dispatch) => ({
+  addItemToCart: (item) => dispatch(addItemToCart(item)),
+});
+
+export default connect(null, mapDispatchToProps)(ShoppingItem);

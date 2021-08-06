@@ -13,6 +13,7 @@ import {
   CheckoutContainer,
   Total,
   CartHeading,
+  ItemsContainer,
 } from "./cart.styles";
 
 import CartItem from "../cart-item/cart-item.component";
@@ -38,14 +39,15 @@ const Cart = ({ toggleCart, isHidden, cartItems }) => {
           <CartItemChar>Price</CartItemChar>
           <CartItemChar>Remove</CartItemChar>
         </ItemsInfo>
-        <div>
+        <ItemsContainer>
           {cartItems.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
-        </div>
+        </ItemsContainer>
         <CheckoutContainer>
           <Total>
-            Total: {cartItems.reduce((acc, i) => acc + i.price, 0)}$
+            Total:{" "}
+            {cartItems.reduce((acc, i) => acc + +i.price * i.quantity, 0)}$
           </Total>
           <CustomButton mainColor={true} size="small">
             order

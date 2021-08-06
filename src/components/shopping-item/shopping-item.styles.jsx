@@ -16,7 +16,7 @@ export const ItemContainer = styled.div`
   position: relative;
 
   .item-btn {
-    z-index: 500;
+    z-index: 100;
     opacity: 0;
   }
 
@@ -45,7 +45,7 @@ export const ItemContainer = styled.div`
 
 export const ShoppingItemButton = styled(CustomButton)`
   opacity: 0;
-  z-index: 500;
+  z-index: 100;
 `;
 
 export const ItemTitle = styled.h3`
@@ -56,14 +56,14 @@ export const CharsList = styled.ul`
   opacity: 0;
   list-style: none;
   margin: 2rem 0 2.4rem 0;
-  z-index: 500;
+  z-index: 100;
   transition: all 0.4s;
 `;
 
 export const CharsItem = styled.li`
   color: white;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 100;
   text-align: center;
 `;
 

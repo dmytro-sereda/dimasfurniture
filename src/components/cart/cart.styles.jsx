@@ -46,6 +46,11 @@ export const CloseButton = styled.div`
   right: 5rem;
 `;
 
+export const ItemsContainer = styled.div`
+  max-height: 62rem;
+  overflow: scroll;
+`;
+
 export const ItemsInfo = styled.div`
   display: flex;
   max-width: 100rem;

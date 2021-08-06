@@ -17,7 +17,10 @@ import image2 from "../../assets/image2.jpg";
 
 import CustomButton from "../../components/custom-button/custom-button";
 import CollectionPreview from "../../components/collection-preview/collection-preview";
-import { selectCollections } from "../../redux/shop/shop.selectors";
+import {
+  selectCollections,
+  selectIsLoading,
+} from "../../redux/shop/shop.selectors";
 import Subscribe from "../../components/subscribe/subscribe.component";
 
 const HomePage = ({ collections }) => {

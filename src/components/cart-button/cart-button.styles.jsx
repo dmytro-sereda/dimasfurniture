@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { ReactComponent as Icon } from "../../assets/cart.svg";
+
 export const CartButtonContainer = styled.button`
   background-color: white;
   border-radius: 50%;
@@ -14,4 +16,9 @@ export const CartButtonContainer = styled.button`
   &:hover {
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.1);
   }
+`;
+
+export const CartIcon = styled(Icon)`
+  width: 2.3rem;
+  height: 2.3rem;
 `;

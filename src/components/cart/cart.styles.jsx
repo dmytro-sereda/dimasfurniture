@@ -30,6 +30,11 @@ export const Popup = styled.div`
   padding: 2rem 0;
   border-radius: 6rem;
   z-index: 502;
+
+  @media only screen and (max-width: 28.125em) {
+    width: 95%;
+    padding: 2rem 2rem;
+  }
 `;
 
 export const CartHeading = styled.h2`

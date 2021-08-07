@@ -15,6 +15,10 @@ export const NavigationList = styled.ul`
 export const NavigationItem = styled.li`
   &:not(:last-of-type) {
     margin-right: 5.5rem;
+
+    @media only screen and (max-width: 28.125em) {
+      margin-right: 3rem;
+    }
   }
 `;
 

@@ -9,13 +9,12 @@ import {
   HeaderContainer,
   MenuLeftAndRightContainer,
   LogoContainer,
+  Logo,
 } from "./header.styles";
 
 import CustomButton from "../custom-button/custom-button";
 import CartButton from "../cart-button/cart-button.component";
 import Navigation from "../navigation/navigation.component";
-
-import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 const Header = ({ currentUser, signInStart, signOut }) => (
   <HeaderContainer>

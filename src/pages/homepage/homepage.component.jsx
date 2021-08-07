@@ -12,6 +12,7 @@ import {
   ImageContainer,
   ImageOne,
   ImageTwo,
+  FirstSectionButton,
 } from "./homepage.styles";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
@@ -32,14 +33,14 @@ const HomePage = ({ collections, history, match }) => {
               With our furniture you can design your room, appartment or house
               any way you want.
             </SectionParagraph>
-            <CustomButton
+            <FirstSectionButton
               to="/shop"
               onClick={() => history.push(`${match.path}shop`)}
               mainColor={true}
               size="large"
             >
               Go shopping
-            </CustomButton>
+            </FirstSectionButton>
           </TextContainer>
 
           <ImageContainer>

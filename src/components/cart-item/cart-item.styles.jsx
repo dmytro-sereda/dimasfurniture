@@ -45,4 +45,6 @@ export const TextPrice = styled.p`
 export const DeleteButton = styled(Trash)`
   margin: 0 auto;
   cursor: pointer;
+  width: 3rem;
+  height: 3.45rem;
 `;

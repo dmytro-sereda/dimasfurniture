@@ -8,6 +8,8 @@ import {
   CharsItem,
   CharsItemData,
   ShoppingItemButton,
+  ItemImagePhones,
+  ImageContainer,
 } from "./shopping-item.styles";
 
 import { addItemToCart } from "../../redux/cart/cart.actions";
@@ -16,6 +18,9 @@ const ShoppingItem = ({ item, addItemToCart }) => {
   const { imageUrl, material, price, name, producer, size } = item;
   return (
     <ItemContainer imageUrl={imageUrl}>
+      <ImageContainer imageUrl={imageUrl}>
+        <ItemImagePhones src={imageUrl} />
+      </ImageContainer>
       <ItemTitle>{name}</ItemTitle>
       <CharsList>
         <CharsItem>

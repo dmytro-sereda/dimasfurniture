@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 
 import { toggleCart } from "../../redux/cart/cart.actions";
 
-import { ReactComponent as CartIcon } from "../../assets/cart.svg";
-import { CartButtonContainer } from "./cart-button.styles";
+import { CartButtonContainer, CartIcon } from "./cart-button.styles";
 
 const Cart = ({ toggleCart }) => {
   return (

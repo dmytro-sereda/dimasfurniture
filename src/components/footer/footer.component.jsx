@@ -4,8 +4,8 @@ import {
   FooterContainer,
   FooterItemsContainer,
   FooterCopyright,
+  Logo,
 } from "./footer.styles";
-import { ReactComponent as Logo } from "../../assets/logo-light.svg";
 
 import Navigation from "../navigation/navigation.component";
 

@@ -1,6 +1,6 @@
 import "./App.css";
 import { connect } from "react-redux";
-import React from "react";
+import React, { useEffect } from "react";
 import { createStructuredSelector } from "reselect";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -16,35 +16,33 @@ import Spinner from "./components/spinner/spinner.component";
 
 import { fetchCollectionsStart } from "./redux/shop/shop.actions";
 import { selectIsLoading } from "./redux/shop/shop.selectors";
+import { checkUserSession } from "./redux/user/user.actions";
 
 const HomePageWithSpinner = WithSpinner(HomePage);
 
-class App extends React.Component {
-  componentDidMount() {
-    this.props.fetchCollectionsStart();
-  }
+const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
+  useEffect(() => {
+    fetchCollectionsStart();
+    checkUserSession();
+  }, [checkUserSession]);
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Cart />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <HomePageWithSpinner isLoading={this.props.isLoading} />
-            )}
-          />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/about" component={AboutPage} />
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Header />
+      <Cart />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <HomePageWithSpinner isLoading={isLoading} />}
+        />
+        <Route path="/shop" component={ShopPage} />
+        <Route path="/about" component={AboutPage} />
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   isLoading: selectIsLoading,
@@ -52,6 +50,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+  checkUserSession: () => dispatch(checkUserSession()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

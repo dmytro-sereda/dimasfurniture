@@ -77,3 +77,13 @@ export const convertCollectionsSnapshotToMap = async (querySnapshot) => {
     return accumulator;
   }, {});
 };
+
+//Get current user
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};

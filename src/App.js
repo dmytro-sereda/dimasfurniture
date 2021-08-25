@@ -2,7 +2,7 @@ import "./App.css";
 import { connect } from "react-redux";
 import React, { useEffect, lazy, Suspense } from "react";
 import { createStructuredSelector } from "reselect";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
@@ -30,17 +30,19 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
     <div>
       <Header />
       <Cart />
-      <Switch>
-        <Suspense fallback={<Spinner />}>
-          <Route
-            exact
-            path="/"
-            render={() => <HomePageWithSpinner isLoading={isLoading} />}
-          />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/about" component={AboutPage} />
-        </Suspense>
-      </Switch>
+      <HashRouter basename="/">
+        <Switch>
+          <Suspense fallback={<Spinner />}>
+            <Route
+              exact
+              path="/"
+              render={() => <HomePageWithSpinner isLoading={isLoading} />}
+            />
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/about" component={AboutPage} />
+          </Suspense>
+        </Switch>
+      </HashRouter>
       <Footer />
     </div>
   );

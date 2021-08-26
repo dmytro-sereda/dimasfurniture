@@ -30,19 +30,19 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
     <div>
       <Header />
       <Cart />
-      <HashRouter basename="/">
-        <Switch>
-          <Suspense fallback={<Spinner />}>
-            <Route
-              exact
-              path="/"
-              render={() => <HomePageWithSpinner isLoading={isLoading} />}
-            />
-            <Route path="/shop" component={ShopPage} />
-            <Route path="/about" component={AboutPage} />
-          </Suspense>
-        </Switch>
-      </HashRouter>
+      {/* <HashRouter basename="/"> */}
+      <Switch>
+        <Suspense fallback={<Spinner />}>
+          <Route
+            exact
+            path="/"
+            render={() => <HomePageWithSpinner isLoading={isLoading} />}
+          />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/about" component={AboutPage} />
+        </Suspense>
+      </Switch>
+      {/* </HashRouter> */}
       <Footer />
     </div>
   );

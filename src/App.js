@@ -30,7 +30,7 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
     <div>
       <Header />
       <Cart />
-      <HashRouter basename="/">
+      {/* <HashRouter basename="/">
         <Switch>
           <Suspense fallback={<Spinner />}>
             <Route
@@ -42,7 +42,7 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
             <Route path="/about" component={AboutPage} />
           </Suspense>
         </Switch>
-      </HashRouter>
+      </HashRouter> */}
       <Footer />
     </div>
   );

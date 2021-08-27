@@ -31,7 +31,7 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
     <div>
       <Header />
       <Cart />
-      <Switch>
+      {/* <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
             <Route
@@ -43,7 +43,14 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
             <Route path="/about" component={AboutPage} />
           </Suspense>
         </ErrorBoundary>
-      </Switch>
+      </Switch> */}
+      <Route
+        exact
+        path="/"
+        render={() => <HomePageWithSpinner isLoading={isLoading} />}
+      />
+      {/* <Route path="/shop" component={ShopPage} />
+      <Route path="/about" component={AboutPage} /> */}
       <Footer />
     </div>
   );

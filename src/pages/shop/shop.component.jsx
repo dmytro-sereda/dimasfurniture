@@ -4,23 +4,30 @@ import { withRouter } from "react-router";
 import { ShopPageContainer } from "./shop.styles";
 
 import Spinner from "../../components/spinner/spinner.component";
+import CollectionPage from "../collection/collection.component";
 
 const CollectionOverview = lazy(() =>
   import("../../components/collection-overview/collection-overview.component")
 );
-const CollectionPage = lazy(() => import("../collection/collection.component"));
+// const CollectionPage = lazy(() => import("../collection/collection.component"));
 
 const ShopPage = ({ match }) => {
   return (
     <ShopPageContainer>
       <Suspense fallback={<Spinner />}>
         <Route exact path={match.path} component={CollectionOverview} />
-        <Route
+        {/* <Route
           exact
-          path={`${match.path}/:collectionId`}
+          path="shop/:collectionId"
+          // path={`${match.path}/:collectionId`}
           component={CollectionPage}
-        />
+        /> */}
       </Suspense>
+      <Route
+        exact
+        path={`${match.path}/:collectionId`}
+        component={CollectionPage}
+      />
     </ShopPageContainer>
   );
 };

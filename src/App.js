@@ -19,8 +19,6 @@ import { checkUserSession } from "./redux/user/user.actions";
 
 const ShopPage = lazy(() => import("./pages/shop/shop.component"));
 const AboutPage = lazy(() => import("./pages/about/about.component"));
-// import ShopPage from "./pages/shop/shop.component";
-// import AboutPage from "./pages/about/about.component";
 const HomePageWithSpinner = WithSpinner(HomePage);
 
 const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
@@ -45,13 +43,6 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
             <Route path="/about" component={AboutPage} />
           </Suspense>
         </ErrorBoundary>
-        {/* <Route
-          exact
-          path="/"
-          render={() => <HomePageWithSpinner isLoading={isLoading} />}
-        />
-        <Route path="/shop" component={ShopPage} />
-        <Route path="/about" component={AboutPage} /> */}
       </Switch>
       <Footer />
     </div>

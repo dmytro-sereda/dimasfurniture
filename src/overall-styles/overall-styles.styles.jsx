@@ -13,7 +13,7 @@ export const Heading1 = css`
   line-height: 1;
 
   @media only screen and (max-width: 43.75em) {
-    width: 67.5rem;
+    width: 100%;
     font-size: 8.5rem;
   }
 `;

@@ -141,8 +141,8 @@ export const ImageTwo = styled.img`
     position: relative;
     top: 0;
     right: 0;
-    width: 62rem;
-    height: 48rem;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
   }
 `;

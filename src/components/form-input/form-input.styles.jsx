@@ -7,4 +7,5 @@ export const FormInputContainer = styled.input`
   font-family: "Rajdhani", sans-serif;
   text-transform: uppercase;
   padding: 1.4rem;
+  font-size: 2rem;
 `;

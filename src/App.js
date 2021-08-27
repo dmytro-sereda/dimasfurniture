@@ -2,7 +2,7 @@ import "./App.css";
 import { connect } from "react-redux";
 import React, { useEffect, lazy, Suspense } from "react";
 import { createStructuredSelector } from "reselect";
-import { Route, Switch, HashRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
@@ -11,6 +11,7 @@ import Footer from "./components/footer/footer.component";
 
 import WithSpinner from "./components/with-spinner/with-spinner.component";
 import Spinner from "./components/spinner/spinner.component";
+import ErrorBoundary from "./components/error-boundary/error-boundary.component";
 
 import { fetchCollectionsStart } from "./redux/shop/shop.actions";
 import { selectIsLoading } from "./redux/shop/shop.selectors";
@@ -30,19 +31,19 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
     <div>
       <Header />
       <Cart />
-      {/* <HashRouter basename="/"> */}
       <Switch>
-        <Suspense fallback={<Spinner />}>
-          <Route
-            exact
-            path="/"
-            render={() => <HomePageWithSpinner isLoading={isLoading} />}
-          />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/about" component={AboutPage} />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <Route
+              exact
+              path="/"
+              render={() => <HomePageWithSpinner isLoading={isLoading} />}
+            />
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/about" component={AboutPage} />
+          </Suspense>
+        </ErrorBoundary>
       </Switch>
-      {/* </HashRouter> */}
       <Footer />
     </div>
   );

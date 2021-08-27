@@ -59,6 +59,7 @@ export const AboutText = styled.p`
   @media only screen and (max-width: 73.125em) {
     column-count: 1;
     column-rule: none;
+    font-size: 4rem;
   }
 
   @media only screen and (max-width: 28.125em) {

@@ -14,6 +14,7 @@ export const FirstSection = styled.section`
   background-image: url(${backgroundImage});
   background-size: cover;
   margin-top: -14.7rem;
+  margin-bottom: 15rem;
 
   @media only screen and (max-width: 56.25em) {
     height: 100%;

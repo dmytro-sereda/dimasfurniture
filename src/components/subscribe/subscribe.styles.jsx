@@ -5,7 +5,6 @@ import {
   Paragraph,
 } from "../../overall-styles/overall-styles.styles";
 
-import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button";
 
 export const SubscribeContainer = styled.section`

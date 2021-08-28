@@ -13,7 +13,11 @@ export const HeaderContainer = styled.div`
 
   @media only screen and (max-width: 107.5em) {
     padding: 4.3rem 4rem;
-  } ;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    padding: 2.3rem 2rem;
+  }
 `;
 
 export const MenuLeftAndRightContainer = styled.div`
@@ -25,11 +29,12 @@ export const MenuLeftAndRightContainer = styled.div`
 export const LogoContainer = styled.div`
   width: 6.1rem;
   height: 6.1rem;
-  border-radius: 50%;
   margin-right: 8.6rem;
 
-  @media only screen and (max-width: 21.875em) {
-    margin-right: 3rem;
+  @media only screen and (max-width: 28.125em) {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
   }
 `;
 

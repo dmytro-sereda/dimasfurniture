@@ -80,6 +80,10 @@ export const ImageContainer = styled.div`
     flex-wrap: wrap;
     align-items: center;
   }
+
+  @media only screen and (max-width: 28.125em) {
+    margin-bottom: -4rem;
+  }
 `;
 
 export const ImageOne = styled.img`
@@ -144,5 +148,9 @@ export const ImageTwo = styled.img`
     width: 100%;
     height: auto;
     margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    margin-top: 4rem;
   }
 `;

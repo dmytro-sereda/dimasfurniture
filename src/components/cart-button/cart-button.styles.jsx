@@ -16,6 +16,10 @@ export const CartButtonContainer = styled.button`
   &:hover {
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.1);
   }
+
+  @media only screen and (max-width: 28.125em) {
+    margin-left: 1.5rem;
+  }
 `;
 
 export const CartIcon = styled(Icon)`

@@ -27,7 +27,7 @@ const HomePage = ({ collections, history, match }) => {
       <FirstSection imageUrl="../../../assets/ellipse.png">
         <FirstSectionContainer>
           <TextContainer>
-            <MainHeading>Create the house of Your dreams</MainHeading>
+            <MainHeading>Create the house of Your dream</MainHeading>
             <SectionParagraph>
               With our furniture you can design your room, appartment or house
               any way you want.

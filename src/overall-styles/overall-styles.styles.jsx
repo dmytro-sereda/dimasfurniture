@@ -43,4 +43,10 @@ export const Paragraph = css`
   font-weight: 400;
   font-size: 2.4rem;
   margin: 3.4rem 0;
+
+  @media only screen and (max-width: 73.125em) {
+    column-count: 1;
+    column-rule: none;
+    font-size: 4rem;
+  }
 `;

@@ -9,21 +9,21 @@ import {
 
 const Navigation = (props) => {
   return (
-    <NavigationContainer>
-      <NavigationList>
-        <NavigationItem>
+    <NavigationContainer {...props}>
+      <NavigationList {...props}>
+        <NavigationItem {...props}>
           <NavigationLink {...props} to="/">
             Main
           </NavigationLink>
         </NavigationItem>
 
-        <NavigationItem>
+        <NavigationItem {...props}>
           <NavigationLink {...props} to="/shop">
             Shop
           </NavigationLink>
         </NavigationItem>
 
-        <NavigationItem>
+        <NavigationItem {...props}>
           <NavigationLink {...props} to="/about">
             About
           </NavigationLink>

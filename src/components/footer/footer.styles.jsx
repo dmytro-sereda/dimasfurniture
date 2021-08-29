@@ -30,6 +30,7 @@ export const FooterCopyright = styled.p`
 
   @media only screen and (max-width: 34.375em) {
     margin-top: 4rem;
+    font-size: 4rem;
   }
 `;
 

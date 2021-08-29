@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { ReactComponent as Icon } from "../../assets/logo.svg";
+import { OverlayStyles } from "../../overall-styles/overall-styles.styles";
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -32,8 +33,8 @@ export const LogoContainer = styled.div`
   margin-right: 8.6rem;
 
   @media only screen and (max-width: 28.125em) {
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
     margin-right: 2rem;
   }
 `;
@@ -41,4 +42,9 @@ export const LogoContainer = styled.div`
 export const Logo = styled(Icon)`
   width: 100%;
   height: 100%;
+`;
+
+export const Overlay = styled.div`
+  ${OverlayStyles}
+  ${(props) => (props.isHidden === true ? "display: none" : "")}
 `;

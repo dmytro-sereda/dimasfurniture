@@ -50,3 +50,13 @@ export const Paragraph = css`
     font-size: 4rem;
   }
 `;
+
+export const OverlayStyles = css`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 501;
+`;

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-import { Heading2 } from "../../overall-styles/overall-styles.styles";
+import {
+  Heading2,
+  OverlayStyles,
+} from "../../overall-styles/overall-styles.styles";
 
 export const CartContainer = styled.div`
   width: 100vw;
@@ -11,13 +14,7 @@ export const CartContainer = styled.div`
 `;
 
 export const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 501;
+  ${OverlayStyles}
 `;
 
 export const Popup = styled.div`

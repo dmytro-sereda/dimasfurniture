@@ -32,12 +32,12 @@ const App = ({ fetchCollectionsStart, checkUserSession, isLoading }) => {
       <Header />
       <Cart />
       <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <HomePageWithSpinner isLoading={isLoading} />}
+        />
         <ErrorBoundary>
-          <Route
-            exact
-            path="/"
-            render={() => <HomePageWithSpinner isLoading={isLoading} />}
-          />
           <Suspense fallback={<Spinner />}>
             <Route path="/shop" component={ShopPage} />
             <Route path="/about" component={AboutPage} />

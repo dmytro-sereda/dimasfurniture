@@ -1,1 +1,2 @@
 # Furniture E-commerce React Application
+E-commerce website for a furniture selling company. Built with React.js, JavaScript, HTML/CSS/SCSS. State management completed with Redux and asynchronous requests to Firebase handled with Redux Sagas. Completed styling of components with the Styled Components library. Lazy loading implemented for inside pages. Google sign-in is added with the integrtion of Firebase, and all new logins automatically create new users in the database.

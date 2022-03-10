@@ -11,7 +11,8 @@ import {
   ItemsInfo,
   CartItemChar,
   CheckoutContainer,
-  Total,
+  TotalText,
+  TotalValue,
   CartHeading,
   ItemsContainer,
 } from "./cart.styles";
@@ -39,16 +40,15 @@ const Cart = ({ toggleCart, isHidden, cartItems }) => {
           <CartItemChar>Price</CartItemChar>
           <CartItemChar>Remove</CartItemChar>
         </ItemsInfo>
-        <ItemsContainer>
+        <ItemsContainer className="items-container">
           {cartItems.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
         </ItemsContainer>
         <CheckoutContainer>
-          <Total>
-            Total:{" "}
-            {cartItems.reduce((acc, i) => acc + +i.price * i.quantity, 0)}$
-          </Total>
+          <TotalText>
+            Total: $<TotalValue data-cy="total-value" className="total">{cartItems.reduce((acc, i) => acc + +i.price * i.quantity, 0)}</TotalValue>
+          </TotalText>
           <CustomButton mainColor={true} size="small">
             order
           </CustomButton>

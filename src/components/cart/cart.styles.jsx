@@ -83,8 +83,14 @@ export const CheckoutContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const Total = styled.h4`
+export const TotalText = styled.h4`
   font-size: 3rem;
   font-weight: 600;
   margin-right: 4.8rem;
+  display: flex;
+  align-items: center;
+`;
+
+export const TotalValue = styled.p`
+  font-size: 2.8rem;
 `;

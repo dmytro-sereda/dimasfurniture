@@ -26,6 +26,8 @@ export const ItemImage = styled.img`
 
 export const ButtonContainer = styled.span`
   cursor: pointer;
+  font-weight: 700;
+  font-size: 2.2rem;
 `;
 
 export const TextName = styled.p`
@@ -35,6 +37,14 @@ export const TextName = styled.p`
 export const TextQuantity = styled.p`
   ${TextStyles}
   padding-left: 1.5rem;
+  display: flex;
+  align-items: center;
+`;
+
+export const QuantityValue = styled.p`
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 0 .3rem;
 `;
 
 export const TextPrice = styled.p`

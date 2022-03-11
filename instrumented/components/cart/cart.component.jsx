@@ -47,7 +47,10 @@ const Cart = ({ toggleCart, isHidden, cartItems }) => {
         </ItemsContainer>
         <CheckoutContainer>
           <TotalText>
-            Total: $<TotalValue className="total">{cartItems.reduce((acc, i) => acc + +i.price * i.quantity, 0)}</TotalValue>
+            Total: $
+            <TotalValue data-cy="total-value" className="total">
+              {cartItems.reduce((acc, i) => acc + +i.price * i.quantity, 0)}
+            </TotalValue>
           </TotalText>
           <CustomButton mainColor={true} size="small">
             order
